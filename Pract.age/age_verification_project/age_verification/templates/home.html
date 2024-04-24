@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домашня сторінка</title>
+</head>
+<body>
+    <h1>Домашня сторінка</h1>
+<form action="{% url 'set_age_cookie' %}" method="post">
+    {% csrf_token %}
+    <label for="age">Введіть свій вік:</label>
+    <input type="number" id="age" name="age" required>
+    <button type="submit">Підтвердити</button>
+</form>
+
+    <a href="{% url 'home_18plus' %}">Сторінка для користувачів достигших 18+ років.</a>
+</body>
+</html>
